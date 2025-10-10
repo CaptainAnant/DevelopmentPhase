@@ -1,0 +1,125 @@
+/* Define color theme using CSS Variables */
+:root {
+    --primary-bg: #0e1007;
+    --primary-text-button: #e5e8df;
+    --accent-color: #7a746c;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-button);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Main authentication container */
+.auth-container {
+    /* CHANGED: Increased the width */
+    max-width: 480px; 
+    width: 100%;
+    padding: 2.5rem;
+    background-color: var(--primary-bg);
+    border: 1px solid #333; /* Subtle border inspired by Vercel */
+    border-radius: 8px;
+}
+
+.logo-text {
+    color: var(--primary-text-button);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Toggle buttons styling */
+.toggle-buttons {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-btn.active {
+    background-color: #222; /* Slightly lighter shade for active state */
+    color: var(--primary-text-button);
+}
+
+.toggle-btn:not(.active):hover {
+    background-color: #1a1a1a;
+}
+
+
+/* Form styling */
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: var(--primary-text-button);
+    border-radius: 6px;
+    padding: 0.75rem;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    color: var(--primary-text-button);
+    border-color: var(--accent-color);
+    box-shadow: none; /* Removes default bootstrap glow */
+}
+
+.form-control::placeholder {
+    color: var(--accent-color);
+    opacity: 0.7;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: var(--primary-text-button);
+    color: var(--primary-bg);
+    border: 1px solid var(--primary-text-button);
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-button);
+    border: 1px solid var(--primary-text-button);
+}
+
+/* Link and secondary text styling */
+.secondary-text {
+    color: var(--accent-color);
+}
+
+.secondary-text a {
+    color: var(--primary-text-button);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.secondary-text a:hover {
+    text-decoration: underline;
+}
+
+/* NEW: Media Query for Responsiveness */
+@media (max-width: 576px) {
+    .auth-container {
+        padding: 1.5rem;
+        border: none; /* Remove border on small screens for more space */
+    }
+}
