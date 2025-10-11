@@ -1,0 +1,85 @@
+/* ================================================
+   PAGE-SPECIFIC STYLES: Attendance
+   ================================================ */
+
+/* --- AttendView Bar --- */
+.attend-view-bar {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--dark-grey-elements);
+}
+
+.bar-title h2 {
+    font-weight: 600;
+    color: var(--primary-text-button);
+    font-size: 2rem;
+}
+
+.bar-controls .btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+.bar-controls .btn-secondary {
+    background-color: var(--darker-grey-bg);
+    border-color: #333;
+}
+.bar-controls .btn-secondary:hover {
+    background-color: var(--dark-grey-elements);
+    border-color: var(--accent-color);
+}
+.overall-percentage {
+    background-color: rgba(229, 232, 223, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+.overall-percentage strong {
+    color: var(--primary-text-button);
+    font-weight: 700;
+}
+
+/* --- Attendance Table --- */
+.main-display-area {
+    background-color: #0d0f06; /* Background for the content area */
+}
+.attendance-table-container {
+    margin-top: 2rem;
+    border: 1px solid var(--dark-grey-elements);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #11130e;
+}
+.table { margin-bottom: 0; }
+.table thead th {
+    background-color: var(--dark-grey-elements);
+    border-bottom: 1px solid #444 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: var(--accent-color);
+    padding: 1rem 1.5rem;
+}
+.table tbody tr {
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    border-bottom: 1px solid var(--dark-grey-elements);
+}
+.table tbody tr:last-child { border-bottom: none; }
+.table tbody tr:hover {
+    background-color: var(--darker-grey-bg);
+    transform: scale(1.015);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.table th, .table td {
+    vertical-align: middle;
+    padding: 1rem 1.5rem;
+    border-top: none;
+}
+.table .text-success { color: #28a745 !important; font-weight: 600; }
+.table .text-danger { color: #dc3545 !important; font-weight: 600; }
+.table .text-secondary { color: var(--accent-color) !important; opacity: 0.7; }
+
+/* --- Media Queries for this page --- */
+@media (max-width: 767.98px) {
+    .main-display-area { padding: 1.5rem !important; }
+}
