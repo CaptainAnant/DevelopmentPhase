@@ -1,0 +1,234 @@
+/* ================================================
+   PAGE-SPECIFIC STYLES: Todo Page (REFINED)
+   ================================================ */
+
+/* --- Left Column: Personal Todo List --- */
+#personal-todo-container,
+#assigned-todo-container {
+    background-color: #16181D;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #333;
+    /* REFINED: Added flex properties to enable equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--dark-grey-elements);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    /* Prevents header from shrinking */
+}
+
+.date-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.date-section p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: var(--accent-color);
+}
+
+/* REFINED: New subtle style for the Clear All button */
+.btn-clear {
+    background-color: transparent;
+    border: 1px solid var(--dark-grey-elements);
+    color: var(--accent-color);
+    transition: all 0.2s ease;
+}
+
+.btn-clear:hover {
+    background-color: var(--dark-grey-elements);
+    border-color: var(--accent-color);
+    color: var(--primary-text-button);
+}
+
+/* REFINED: This now grows to fill space, enabling the Add Task button to stick to the bottom */
+#personal-task-list {
+    flex-grow: 1;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: var(--primary-text-button);
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.task-input:focus {
+    outline: none;
+    border-bottom-color: var(--primary-text-button);
+}
+
+.todo-item.completed .task-input {
+    text-decoration: line-through;
+    color: var(--accent-color);
+    opacity: 0.7;
+}
+
+.task-checkbox-wrapper {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.task-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox {
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.task-checkbox-wrapper:hover .custom-checkbox {
+    border-color: var(--primary-text-button);
+}
+
+.task-checkbox:checked~.custom-checkbox {
+    background-color: #4ca1af;
+    border-color: #4ca1af;
+}
+
+.custom-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--primary-bg);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.task-checkbox:checked~.custom-checkbox:after {
+    display: block;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1rem;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: color 0.2s, opacity 0.2s;
+}
+
+.todo-item:hover .remove-btn {
+    visibility: visible;
+    opacity: 1;
+}
+
+.remove-btn:hover {
+    color: #dc3545;
+}
+
+/* REFINED: New style for the Add Task button to match the theme */
+#add-task-btn {
+    background-color: transparent;
+    border: 1px dashed var(--accent-color);
+    color: var(--accent-color);
+    margin-top: 1rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    /* Prevents button from shrinking */
+    transition: all 0.2s ease;
+}
+
+#add-task-btn:hover {
+    border-color: var(--primary-text-button);
+    background-color: rgba(229, 232, 223, 0.1);
+    color: var(--primary-text-button);
+}
+
+/* --- Right Column: Assigned Todo List --- */
+.assigned-task-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Makes this section scrollable if content overflows */
+    padding-right: 5px;
+}
+
+.assigned-task-item {
+    background-color: var(--darker-grey-bg);
+    border: 1px solid #333;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.assigned-task-item .task-title {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--primary-text-button);
+    margin-bottom: 0.75rem;
+}
+
+.assigned-task-item .task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+.task-meta .meta-item .fas {
+    margin-right: 0.5rem;
+}
+
+.assigned-task-item .task-deadline {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    border-radius: 6px;
+    color: #ffc107;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.task-deadline .fas {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+    #assigned-todo-container {
+        margin-top: 2rem;
+    }
+}
