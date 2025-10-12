@@ -144,7 +144,7 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding-bottom: 0.75rem; /* REFINED: Reduced padding */
+    padding-bottom: 0.5rem; /* REFINED: Reduced padding */
     border-bottom: 1px solid var(--dark-grey-elements);
     margin-bottom: 1.5rem; /* REFINED: Reduced margin */
     flex-shrink: 0; /* Prevents this bar from shrinking */
