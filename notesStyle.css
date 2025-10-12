@@ -1,0 +1,190 @@
+/* ================================================
+   PAGE-SPECIFIC STYLES: Notes & Resources
+   ================================================ */
+
+.page-title {
+    font-weight: 600;
+    color: var(--primary-text-button);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--dark-grey-elements);
+    padding-bottom: 1rem;
+}
+
+/* --- The Grid Container --- */
+.subject-grid {
+    display: grid;
+    /* This creates a responsive grid. It will fit as many 220px cards as it can. */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem; /* The space between cards */
+}
+
+/* --- Individual Subject Card Styling --- */
+.subject-card {
+    background: linear-gradient(145deg, #22252a, #1a1c20);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--primary-text-button);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+    /* Setting up for the pop-in animation */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: pop-in 0.5s forwards;
+}
+
+.subject-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-text-button);
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.subject-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* --- Hover Animation (similar to Action Bar) --- */
+.subject-card:hover {
+    transform: translateY(-8px) scale(1.05); /* Lifts the card up */
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-color);
+}
+
+.subject-card:hover .card-icon {
+    transform: scale(1.1); /* Make the icon slightly bigger on hover */
+}
+
+
+/* --- Staggered Pop-in Animation --- */
+@keyframes pop-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* We apply a delay to each card so they appear one after another */
+.subject-card:nth-child(1) { animation-delay: 0.1s; }
+.subject-card:nth-child(2) { animation-delay: 0.2s; }
+.subject-card:nth-child(3) { animation-delay: 0.3s; }
+.subject-card:nth-child(4) { animation-delay: 0.4s; }
+.subject-card:nth-child(5) { animation-delay: 0.5s; }
+/* Add more if you have more cards */
+
+
+
+/* ================================================
+   PAGE-SPECIFIC STYLES: Notes & Resources
+   ================================================ */
+
+.page-title {
+    font-weight: 600;
+    color: var(--primary-text-button);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--dark-grey-elements);
+    padding-bottom: 1rem;
+}
+
+/* --- The Grid Container --- */
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Individual Subject Card Styling --- */
+.subject-card {
+    background: linear-gradient(145deg, #22252a, #1a1c20);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--primary-text-button);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: pop-in 0.5s forwards;
+}
+.subject-card .card-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--primary-text-button); opacity: 0.8; transition: transform 0.3s ease; }
+.subject-card .card-title { font-size: 1.2rem; font-weight: 500; }
+.subject-card:hover { transform: translateY(-8px) scale(1.05); text-decoration: none; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); border-color: var(--accent-color); }
+.subject-card:hover .card-icon { transform: scale(1.1); }
+@keyframes pop-in { to { opacity: 1; transform: scale(1); } }
+.subject-card:nth-child(1) { animation-delay: 0.1s; }
+.subject-card:nth-child(2) { animation-delay: 0.2s; }
+.subject-card:nth-child(3) { animation-delay: 0.3s; }
+.subject-card:nth-child(4) { animation-delay: 0.4s; }
+.subject-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* ================================================
+   Notes Page: Resource Viewer Styles
+   ================================================ */
+#resource-viewer-container {
+    animation: fade-in 0.5s ease;
+    /* REFINED: Added flex properties to control the scrollable area */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Take up full height of its parent */
+}
+@keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- REFINED: ViewBar (more compact) --- */
+.resource-view-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 0.75rem; /* REFINED: Reduced padding */
+    border-bottom: 1px solid var(--dark-grey-elements);
+    margin-bottom: 1.5rem; /* REFINED: Reduced margin */
+    flex-shrink: 0; /* Prevents this bar from shrinking */
+}
+.back-button { font-size: 1.5rem; color: var(--accent-color); transition: color 0.2s ease, transform 0.2s ease; }
+.back-button:hover { color: var(--primary-text-button); transform: scale(1.1); }
+.subject-info { display: flex; align-items: center; gap: 0.75rem; font-size: 1.1rem; font-weight: 500; }
+.subject-info .info-label { color: var(--accent-color); }
+.subject-info .info-subject { color: var(--primary-text-button); }
+.subject-info .info-code { font-size: 0.9rem; color: var(--accent-color); opacity: 0.8; }
+.subject-info .separator-icon { font-size: 0.8rem; color: var(--accent-color); }
+
+/* --- REFINED: Resource List (now scrollable) --- */
+.resource-list {
+    flex-grow: 1; /* Allows the list to take up all available vertical space */
+    overflow-y: auto; /* The magic property! Shows a scrollbar ONLY if needed */
+    padding-right: 10px; /* Adds a little space for the scrollbar */
+}
+.resource-item {
+    background-color: #16181D;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.resource-item .item-header { display: flex; align-items: center; margin-bottom: 1rem; }
+.resource-item .item-icon { font-size: 1.5rem; margin-right: 1rem; padding: 0.75rem; border-radius: 8px; background-color: rgba(0,0,0,0.2); }
+.item-icon.pdf { color: #F40F02; }
+.item-icon.image { color: #00A693; }
+.item-icon.doc { color: #2B579A; }
+.resource-item .item-title { margin-bottom: 0; font-size: 1.1rem; font-weight: 500; }
+.resource-item .item-description { color: var(--accent-color); padding-left: 3.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; }
+.resource-item .item-footer { display: flex; justify-content: space-between; align-items: center; padding-left: 3.5rem; font-size: 0.85rem; }
+.item-footer .meta-info { display: flex; flex-wrap: wrap; gap: 1rem; color: var(--accent-color); opacity: 0.8; }
+.meta-info .fas { margin-right: 0.5rem; }
+
+/* REFINED: Added to make the parent container a flexbox column */
+#notes-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

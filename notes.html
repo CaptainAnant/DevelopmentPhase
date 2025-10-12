@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes & Resources - ClasSync</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="notesStyle.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg clas-sync-navbar py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-text" href="index.html">ClasSync</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
+                        <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+                            <li><a class="dropdown-item" href="attendance.html">Attendance</a></li>
+                            <li><a class="dropdown-item" href="notes.html">Notes & Resources</a></li>
+                            <li><a class="dropdown-item" href="#">Notice</a></li>
+                            <li><a class="dropdown-item" href="#">Todo</a></li>
+                            <li><a class="dropdown-item" href="#">Academics</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" href="#">Quick ToDo's</a></li>
+                    <li><a class="nav-link" href="#">ClasSync+</a></li>
+                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="nav-link d-flex align-items-center" href="#"><i class="fas fa-user-circle me-1"></i>
+                            Profile</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="login.html">Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid main-content-area">
+        <div class="row h-100">
+            <aside class="col-lg-3 col-md-4 d-none d-md-block action-bar-container py-4">
+                <h4 class="text-white mb-4">Explore</h4>
+                <div id="actionBarContent">
+                    <a href="attendance.html" class="action-card card-attendance">
+                        <div class="card-content"><i class="fas fa-calendar-check card-icon"></i><span
+                                class="card-text">Attendance</span></div>
+                    </a>
+                    <a href="notes.html" class="action-card card-notes">
+                        <div class="card-content"><i class="fas fa-book-open card-icon"></i><span
+                                class="card-text">Notes & Resources</span></div>
+                    </a>
+                    <a href="#notice" class="action-card card-notice">
+                        <div class="card-content"><i class="fas fa-bullhorn card-icon"></i><span
+                                class="card-text">Notice</span></div>
+                    </a>
+                    <a href="#todo" class="action-card card-todo">
+                        <div class="card-content"><i class="fas fa-list-check card-icon"></i><span
+                                class="card-text">Todo</span></div>
+                    </a>
+                    <a href="#academics" class="action-card card-academics">
+                        <div class="card-content"><i class="fas fa-graduation-cap card-icon"></i><span
+                                class="card-text">Academics</span></div>
+                    </a>
+                </div>
+            </aside>
+
+            <section class="col-lg-9 col-md-8 main-display-area p-4 p-md-5">
+                <<div id="notes-content-wrapper">
+                    <div id="subject-cards-container">
+                        <h2 class="page-title">Select a Subject</h2>
+                        <div class="subject-grid">
+                            <a href="#physics" class="subject-card">
+                                <i class="fas fa-atom card-icon"></i>
+                                <h4 class="card-title">Physics</h4>
+                            </a>
+
+                            <a href="#chemistry" class="subject-card">
+                                <i class="fas fa-flask card-icon"></i>
+                                <h4 class="card-title">Chemistry</h4>
+                            </a>
+
+                            <a href="#math" class="subject-card">
+                                <i class="fas fa-calculator card-icon"></i>
+                                <h4 class="card-title">Mathematics</h4>
+                            </a>
+
+                            <a href="#english" class="subject-card">
+                                <i class="fas fa-book card-icon"></i>
+                                <h4 class="card-title">English</h4>
+                            </a>
+
+                            <a href="#history" class="subject-card">
+                                <i class="fas fa-landmark card-icon"></i>
+                                <h4 class="card-title">History</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Subject page Holder -->
+                    <div id="resource-viewer-container" style="display: none;">
+                        <div class="resource-view-bar">
+                            <a href="#" id="back-to-subjects" class="back-button">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+
+                            <div class="subject-info">
+                                <span class="info-label">Sem 3</span>
+                                <i class="fas fa-chevron-right separator-icon"></i>
+                                <span id="viewbar-subject-name" class="info-subject">Physics</span>
+                                <span id="viewbar-subject-code" class="info-code">(CS201)</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-list">
+                            <div class="resource-item">
+                                <div class="item-header">
+                                    <i class="fas fa-file-pdf item-icon pdf"></i>
+                                    <h5 class="item-title">Chapter 1 - Introduction to Kinematics.pdf</h5>
+                                </div>
+                                <p class="item-description">
+                                    Core concepts and formulas for the first chapter. Make sure to review the examples
+                                    on page 12.
+                                </p>
+                                <div class="item-footer">
+                                    <div class="meta-info">
+                                        <span class="admin-name"><i class="fas fa-user-shield"></i> Dr. Ananya
+                                            Sharma</span>
+                                        <span class="timestamp"><i class="fas fa-clock"></i> Oct 10, 2025, 2:30
+                                            PM</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-sm">View</a>
+                                </div>
+                            </div>
+
+                            <div class="resource-item">
+                                <div class="item-header">
+                                    <i class="fas fa-file-image item-icon image"></i>
+                                    <h5 class="item-title">Diagram_Projectile_Motion.jpg</h5>
+                                </div>
+                                <p class="item-description">
+                                    Hand-drawn diagram explaining the key vectors in projectile motion.
+                                </p>
+                                <div class="item-footer">
+                                    <div class="meta-info">
+                                        <span class="admin-name"><i class="fas fa-user-shield"></i> Dr. Ananya
+                                            Sharma</span>
+                                        <span class="timestamp"><i class="fas fa-clock"></i> Oct 11, 2025, 9:15
+                                            AM</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-sm">View</a>
+                                </div>
+                            </div>
+
+                            <div class="resource-item">
+                                <div class="item-header">
+                                    <i class="fas fa-file-word item-icon doc"></i>
+                                    <h5 class="item-title">Lab_Report_Guidelines.docx</h5>
+                                </div>
+                                <p class="item-description">
+                                    Please follow this format strictly for all upcoming lab report submissions.
+                                </p>
+                                <div class="item-footer">
+                                    <div class="meta-info">
+                                        <span class="admin-name"><i class="fas fa-user-shield"></i> Dr. Ananya
+                                            Sharma</span>
+                                        <span class="timestamp"><i class="fas fa-clock"></i> Oct 12, 2025, 11:05
+                                            AM</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-sm">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+        </section>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span>&copy; 2025 ClasSync. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- 1. GET REFERENCES TO OUR ELEMENTS ---
+            const subjectCardsContainer = document.getElementById('subject-cards-container');
+            const resourceViewerContainer = document.getElementById('resource-viewer-container');
+            const allSubjectCards = document.querySelectorAll('.subject-card');
+            const backToSubjectsBtn = document.getElementById('back-to-subjects');
+
+            // Get references to the dynamic text elements in the ViewBar
+            const viewBarSubjectName = document.getElementById('viewbar-subject-name');
+            const viewBarSubjectCode = document.getElementById('viewbar-subject-code');
+
+            // --- 2. HANDLE CLICKS ON EACH SUBJECT CARD ---
+            allSubjectCards.forEach(card => {
+                card.addEventListener('click', function (event) {
+                    event.preventDefault(); // Stop the link from jumping
+
+                    // Get the subject name from the card that was clicked
+                    const subjectName = card.querySelector('.card-title').textContent;
+
+                    // --- This is where you would fetch real data later ---
+                    // For now, we'll just update the ViewBar with the subject name
+                    viewBarSubjectName.textContent = subjectName;
+                    // You could also have a data attribute on the card for the code, e.g., data-code="PHY101"
+                    viewBarSubjectCode.textContent = `(${subjectName.substring(0, 3).toUpperCase()}101)`;
+
+                    // Hide the subject cards grid
+                    subjectCardsContainer.style.display = 'none';
+
+                    // Show the resource viewer
+                    resourceViewerContainer.style.display = 'block';
+                });
+            });
+
+            // --- 3. HANDLE CLICK ON THE 'BACK' BUTTON ---
+            backToSubjectsBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Hide the resource viewer
+                resourceViewerContainer.style.display = 'none';
+
+                // Show the subject cards grid again
+                subjectCardsContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>
