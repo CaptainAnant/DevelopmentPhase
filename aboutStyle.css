@@ -1,0 +1,112 @@
+/* ================================================
+   PAGE-SPECIFIC STYLES: About Page
+   ================================================ */
+
+/* --- Main Content Wrapper (Gradient BG) --- */
+#about-content-wrapper {
+    /* Full-page gradient background, similar to other pages */
+    background: radial-gradient(ellipse at center, rgba(31, 34, 26, 0.5) 0%, var(--primary-bg) 70%);
+    width: 100%;
+    /* We use min-height to ensure it at least fills the screen */
+    min-height: calc(100vh - 120px); /* 100% viewport height minus navbar/footer */
+    padding: 3rem 0;
+}
+
+/* --- The "Document" Box --- */
+.about-container {
+    /* A slightly lighter, solid background to feel like a document */
+    background-color: #16181D; 
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: pop-in 0.6s ease-out forwards;
+}
+
+@keyframes pop-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Section Styling --- */
+.about-section {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--dark-grey-elements);
+    padding-bottom: 2rem;
+}
+.about-section:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.section-title {
+    font-weight: 600;
+    color: var(--primary-text-button);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.about-section p {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* --- Contact Links --- */
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contact-link .fas, .contact-link .fab {
+    font-size: 1.5rem;
+}
+.contact-link:hover {
+    color: var(--primary-text-button);
+}
+
+/* --- Disclaimer --- */
+.disclaimer .disclaimer-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-text-button);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+.disclaimer p {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 767.98px) {
+    #about-content-wrapper {
+        padding: 2rem 0;
+    }
+    .about-container {
+        padding: 2rem 1.5rem;
+    }
+    .about-section p {
+        font-size: 1rem;
+    }
+}
