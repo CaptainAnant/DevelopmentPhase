@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClasSync+ Premium - ClasSync</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="plusStyle.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg clas-sync-navbar py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-text" href="index.html">ClasSync</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
+                        <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+                            <li><a class="dropdown-item" href="attendance.html">Attendance</a></li>
+                            <li><a class="dropdown-item" href="notes.html">Notes & Resources</a></li>
+                            <li><a class="dropdown-item" href="notice.html">Notice</a></li>
+                            <li><a class="dropdown-item" href="todo.html">Todo</a></li>
+                            <li><a class="dropdown-item" href="academics.html">Academics</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" href="#">Quick ToDo's</a></li>
+                    <li><a class="nav-link" href="classync_plus.html">ClasSync+</a></li>
+                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="nav-link d-flex align-items-center" href="#"><i class="fas fa-user-circle me-1"></i>
+                            Profile</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="login.html">Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid main-content-area">
+        <div class="row h-100">
+            <aside class="col-lg-3 col-md-4 d-none d-md-block action-bar-container py-4">
+                <h4 class="text-white mb-4">Explore</h4>
+                <div id="actionBarContent">
+                    <a href="attendance.html" class="action-card card-attendance">
+                        <div class="card-content"><i class="fas fa-calendar-check card-icon"></i><span
+                                class="card-text">Attendance</span></div>
+                    </a>
+                    <a href="notes.html" class="action-card card-notes">
+                        <div class="card-content"><i class="fas fa-book-open card-icon"></i><span
+                                class="card-text">Notes & Resources</span></div>
+                    </a>
+                    <a href="notice.html" class="action-card card-notice">
+                        <div class="card-content"><i class="fas fa-bullhorn card-icon"></i><span
+                                class="card-text">Notice</span></div>
+                    </a>
+                    <a href="todo.html" class="action-card card-todo">
+                        <div class="card-content"><i class="fas fa-list-check card-icon"></i><span
+                                class="card-text">Todo</span></div>
+                    </a>
+                    <a href="academics.html" class="action-card card-academics">
+                        <div class="card-content"><i class="fas fa-graduation-cap card-icon"></i><span
+                                class="card-text">Academics</span></div>
+                    </a>
+                </div>
+            </aside>
+
+            <section class="col-lg-9 col-md-8 main-display-area p-4 p-md-5">
+                <div id="plus-content-wrapper">
+                    <div class="plus-container">
+                        <div class="plus-header text-center">
+                            <h1 class="plus-title">Unlock Your Full Potential with ClasSync+</h1>
+                            <p class="plus-subtitle">Gain exclusive access to powerful features designed to supercharge
+                                your academic journey.</p>
+                        </div>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Full Attendance History</h5>
+                                    <p>Access your complete attendance records for the entire semester or year, not just
+                                        the recent entries.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-archive"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Extended Resource Archive</h5>
+                                    <p>Keep access to all notes and resources indefinitely, removing the standard 30-day
+                                        expiration.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Priority Notice Feed</h5>
+                                    <p>Get unlimited access to the complete history of all announcements and notices
+                                        from your faculty.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-list-check"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Unlimited Personal Todos</h5>
+                                    <p>Create as many personal tasks as you need with 10x the limit of the standard
+                                        plan.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="plus-cta text-center">
+                            <button id="verify-premium-btn" class="btn btn-primary btn-lg">
+                                Verify for Premium
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span>&copy; 2025 ClasSync. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('verify-premium-btn').addEventListener('click', function () {
+            alert('Verification feature coming soon!');
+        });
+    </script>
+</body>
+
+</html>

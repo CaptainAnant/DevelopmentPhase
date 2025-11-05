@@ -1,0 +1,165 @@
+/* ================================================
+   PAGE-SPECIFIC STYLES: Academics
+   ================================================ */
+
+.page-title {
+    font-weight: 600;
+    color: var(--primary-text-button);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--dark-grey-elements);
+    padding-bottom: 1rem;
+}
+
+/* --- The Grid Container --- */
+.semester-grid {
+    display: grid;
+    /* Responsive grid: fits as many 220px cards as it can */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem; /* The space between cards */
+}
+
+/* --- Individual Semester Card Styling --- */
+.semester-card {
+    background: linear-gradient(145deg, #22252a, #1a1c20);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--primary-text-button);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+    /* Pop-in animation setup */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: pop-in 0.5s forwards;
+}
+
+.semester-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-text-button);
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.semester-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* --- Hover Animation --- */
+.semester-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-color);
+}
+
+.semester-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+/* --- Staggered Pop-in Animation --- */
+@keyframes pop-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.semester-card:nth-child(1) { animation-delay: 0.1s; }
+.semester-card:nth-child(2) { animation-delay: 0.2s; }
+.semester-card:nth-child(3) { animation-delay: 0.3s; }
+.semester-card:nth-child(4) { animation-delay: 0.4s; }
+.semester-card:nth-child(5) { animation-delay: 0.5s; }
+
+
+
+
+
+/* ================================================
+   Academics Page: Marks Table View
+   ================================================ */
+
+/* --- Main Viewer Container Animation --- */
+#marks-table-container {
+    animation: fade-in 0.5s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ViewBar (below Navbar) --- */
+.marks-view-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--dark-grey-elements);
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+.back-button {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.back-button:hover {
+    color: var(--primary-text-button);
+    transform: scale(1.1);
+}
+.marks-view-bar .subject-info h3 {
+    color: var(--primary-text-button);
+    font-weight: 600;
+}
+
+/* --- Responsive Table Wrapper --- */
+.table-responsive-wrapper {
+    overflow-x: auto;
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #444; /* Slightly lighter border */
+    border-radius: 12px;
+    background-color: var(--darker-grey-bg); /* Brighter background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+/* --- Marks Table Styling --- */
+.marks-table {
+    min-width: 800px; /* Force horizontal scroll if container is too narrow */
+    margin-bottom: 0;
+}
+.marks-table thead th {
+    background-color: var(--dark-grey-elements);
+    border-bottom: 1px solid #444 !important;
+    color: var(--accent-color); /* This color is often lighter, if not, adjust */
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+.marks-table tbody td {
+    vertical-align: middle;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--dark-grey-elements);
+    text-align: center;
+    color: var(--primary-text-button); /* This is good, but let's ensure it */
+}
+
+.marks-table tbody tr {
+    transition: background-color 0.25s ease;
+}
+.marks-table tbody tr:hover {
+    background-color: var(--darker-grey-bg);
+}
+/* First column (Subject Name) is left-aligned */
+.marks-table tbody td:first-child,
+.marks-table thead th:first-child {
+    text-align: left;
+    font-weight: 500;
+}

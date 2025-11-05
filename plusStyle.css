@@ -1,0 +1,115 @@
+/* ================================================
+   PAGE-SPECIFIC STYLES: ClasSync+
+   ================================================ */
+
+/* --- Main Content Wrapper --- */
+/* This centers the glass box in the available space */
+#plus-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(31, 34, 26, 0.5) 0%, var(--primary-bg) 70%);
+}
+
+/* --- The Glass Container --- */
+.plus-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 2.5rem 3rem;
+
+    /* --- Glassmorphism Effect --- */
+    background-color: rgba(44, 44, 50, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* --- Animation --- */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: pop-in 0.6s ease-out forwards;
+}
+
+@keyframes pop-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Header --- */
+.plus-header .plus-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-text-button);
+    margin-bottom: 0.5rem;
+}
+.plus-header .plus-subtitle {
+    font-size: 1.15rem;
+    color: var(--accent-color);
+    margin-bottom: 2.5rem;
+}
+
+/* --- Feature List --- */
+.feature-list {
+    margin-bottom: 2.5rem;
+}
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.feature-icon {
+    font-size: 1.5rem;
+    color: #4ca1af; /* Use a theme color */
+    margin-right: 1.5rem;
+    min-width: 30px;
+    text-align: center;
+}
+.feature-text h5 {
+    font-weight: 600;
+    color: var(--primary-text-button);
+    margin-bottom: 0.25rem;
+}
+.feature-text p {
+    color: var(--accent-color);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* --- Call to Action Button --- */
+.plus-cta .btn-primary {
+    background-color: var(--primary-text-button);
+    color: var(--primary-bg);
+    border: 2px solid var(--primary-text-button);
+    border-radius: 8px;
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.plus-cta .btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-text-button);
+    transform: scale(1.05);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 767.98px) {
+    .plus-container {
+        padding: 2rem 1.5rem;
+    }
+    .plus-header .plus-title {
+        font-size: 2rem;
+    }
+    .plus-header .plus-subtitle {
+        font-size: 1rem;
+    }
+    .feature-item {
+        align-items: flex-start;
+    }
+}
