@@ -1,6 +1,6 @@
 /* ================================================
-   SHARED STYLES (for all pages)
-   ================================================ */
+    SHARED STYLES (for all pages)
+    ================================================ */
 
 /* --- Color Theme & Global Styles --- */
 :root {
@@ -18,7 +18,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* REMOVED 'overflow: hidden;' 
+      This was preventing the main flex layout from working correctly 
+      and would hide content on smaller screens.
+    */
 }
 
 .logo-text {
